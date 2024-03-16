@@ -1,3 +1,4 @@
+# yabai-float.sh
 #!/bin/bash
 
 # Get the current window ID

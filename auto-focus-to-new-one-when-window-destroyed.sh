@@ -1,3 +1,4 @@
+# auto-focus-to-new-one-when-window-destroyed.sh
 #!/bin/bash
 
 # Yabai should auto focus on new window after one window destroyed.

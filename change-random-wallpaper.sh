@@ -1,3 +1,4 @@
+# change-random-wallpaper.sh
 #!/usr/bin/env bash
 
 CURRENT_DESKTOP=

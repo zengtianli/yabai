@@ -1,3 +1,4 @@
+# auto_close_space_when_space_empty.sh
 #!/bin/bash
 
 space_index=$(yabai -m query --spaces --space | jq '.index')

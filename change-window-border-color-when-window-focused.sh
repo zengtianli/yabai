@@ -1,3 +1,4 @@
+# change-window-border-color-when-window-focused.sh
 #!/usr/bin/env bash
 
 window_id="${YABAI_WINDOW_ID:-}"

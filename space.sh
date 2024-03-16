@@ -1,3 +1,4 @@
+# space.sh
 #!/bin/bash
 
 yabai -m window --space next
