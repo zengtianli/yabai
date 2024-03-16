@@ -1,0 +1,126 @@
+#!/usr/bin/env zsh
+
+set -x
+
+# initialization
+arch -arm64e sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="arch -arm64e sudo yabai --load-sa"
+
+source ~/.config/yabai/initialization.sh
+
+# ====
+# Signals
+# ====
+
+# Initialize the temp folder when adding or removing displays
+yabai -m signal --add event=display_added action="~/.config/yabai/initialization.sh"
+yabai -m signal --add event=display_removed action="~/.config/yabai/initialization.sh"
+yabai -m signal --add event=window_focused action="~/.config/yabai/change-window-border-color-when-window-focused.sh"
+yabai -m signal --add event=window_destroyed action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=application_hidden action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+yabai -m signal --add event=window_minimized action="~/.config/yabai/auto-focus-to-new-one-when-window-destroyed.sh 2> /dev/null"
+
+# ====
+# Settings
+# ====
+
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          on
+yabai -m config window_placement             second_child
+yabai -m config window_topmost               off
+yabai -m config window_shadow                float
+
+yabai -m config window_border                on
+yabai -m config window_border_placement      inset
+yabai -m config window_border_blur           off
+yabai -m config window_border_hidpi          off
+yabai -m config window_border_width          3
+yabai -m config window_border_radius         12
+yabai -m config active_window_border_topmost off
+yabai -m config active_window_border_color   0xfcFFEE58
+yabai -m config normal_window_border_color   0x00ffffff
+yabai -m config insert_window_border_color   0xffd75f5f
+
+yabai -m config window_opacity               on
+yabai -m config window_opacity_duration      96
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        1.0
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 off
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+yabai -m config layout                       bsp
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
+
+# animation
+#yabai -m config window_animation_duration    0.30
+
+# ====
+# Rules
+# ====
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Zotero" manage=off
+yabai -m rule --add app="^Paste" manage=off
+yabai -m rule --add app="^Grammarly Desktop$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^WeChat$" manage=off
+yabai -m rule --add app="^DingTalk$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^AirBuddy$" manage=off
+yabai -m rule --add app="^duet$" manage=off
+yabai -m rule --add app="^Rewind$" manage=off
+yabai -m rule --add app="^QQ$" manage=off
+yabai -m rule --add app="^BetterDisplay$" manage=off
+yabai -m rule --add app="^MonitorControl$" manage=off
+yabai -m rule --add app="^Parallels Desktop$" manage=off
+yabai -m rule --add app="^BetterAndBetter$" manage=off
+yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
+yabai -m rule --add app="^Timemator$" manage=off
+yabai -m rule --add app="^CleanMyMacX$" manage=off
+yabai -m rule --add app="^PreviewMarkdown$" manage=off
+yabai -m rule --add app="^Python$" manage=off
+yabai -m rule --add app="^KeyboardHolder$" manage=off
+yabai -m rule --add app="^Hammerspoon$" manage=off
+yabai -m rule --add app="^aDrive$" manage=off
+# yabai -m rule --add app="^Arc$" manage=off
+yabai -m rule --add app="^CleanShot X$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
+yabai -m rule --add app="^PyCharm$" manage=off
+# yabai -m rule --add app="^Warp$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+# yabai -m rule --add app="^Finder$" manage=off
+# yabai -m rule --add app="^Microsoft Word$" manage=off
+yabai -m rule --add app="^Voice Memos$" manage=off
+# yabai -m rule --add app="^Keyboard Maestro$" manage=off
+
+## specific rule
+
+yabai -m rule --add app="^IntelliJ IDEA$" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" title="( – )" manage=on
+
+echo "yabai configuration loaded.."
+yabai -m rule --add app="^NetEaseMusic$" manage=off
+yabai -m rule --add app="^ClashX Pro$" manage=off
+yabai -m rule --add app="^Obsidian$" manage=off
+yabai -m rule --add app="^Keyboard Maestro$" manage=off
+yabai -m rule --add app="^PicGo$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^Todoist$" manage=off
+yabai -m rule --add app="^Bartender 4$" manage=off
+yabai -m rule --add app="^Bartender 5$" manage=off
+yabai -m rule --add app="^iStat Menus$" manage=off
+yabai -m rule --add app="^Reminders$" manage=off
+yabai -m rule --add app="^Docker Desktop$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
+yabai -m rule --add app="^Bear$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^python3$" manage=off
