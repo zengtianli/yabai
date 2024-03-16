@@ -100,6 +100,7 @@ yabai -m rule --add app="^Messages$" manage=off
 # yabai -m rule --add app="^Finder$" manage=off
 # yabai -m rule --add app="^Microsoft Word$" manage=off
 yabai -m rule --add app="^Voice Memos$" manage=off
+yabai -m rule --add app="^GitButler$" manage=off
 # yabai -m rule --add app="^Keyboard Maestro$" manage=off
 
 ## specific rule
