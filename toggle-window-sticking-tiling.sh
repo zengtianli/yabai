@@ -1,3 +1,4 @@
+# toggle-window-sticking-tiling.sh
 #!/usr/bin/env bash
 
 # Toggle a window between floating and tiling.

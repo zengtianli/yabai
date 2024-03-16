@@ -1,3 +1,4 @@
+# send_to_next_display.sh
 #!/bin/bash
 set -euo pipefail
 IFS=$'\n\t'

@@ -1,3 +1,4 @@
+# move_window.sh
 #!/bin/bash
 
 if yabai -m window --space next; then

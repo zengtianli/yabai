@@ -1,3 +1,4 @@
+# initialization.sh
 #!/usr/bin/env bash
 
 # (I). Initialize the temp folder

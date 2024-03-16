@@ -1,3 +1,4 @@
+# toggle-layout.sh
 #!/bin/bash
 
 # Get the current layout

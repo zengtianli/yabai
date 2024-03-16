@@ -1,3 +1,4 @@
+# toggle-yabai.sh
 #!/bin/bash
 if pgrep -x "yabai" > /dev/null; then
   # brew services stop yabai

@@ -1,3 +1,4 @@
+# destroy_space.sh
 #!/bin/bash
 PATH=$PATH:~/.local/bin
 
